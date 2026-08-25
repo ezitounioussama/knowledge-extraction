@@ -1,0 +1,178 @@
+{
+  "document": "The Eiffel Tower, located in Paris, France, was constructed between 1887 and 1889 as the entrance arch to the 1889 World's Fair.\nIt was designed by Gustave Eiffel's engineering company and initially faced criticism from artists and intellectuals who considered it an eyesore.\nToday, the Eiffel Tower is one of the most visited monuments in the world, attracting over 7 million visitors annually.\nIn 2015, special lighting systems were added to enhance its nighttime appearance and improve energy efficiency.",
+  "strategy": "semantic (sentence) split with metadata enrichment",
+  "chunks": [
+    {
+      "index": 1,
+      "text": "The Eiffel Tower, located in Paris, France, was constructed between 1887 and 1889 as the entrance arch to the 1889 World's Fair.",
+      "topic": "construction and original purpose",
+      "period": "construction era (1887-1889)",
+      "entities": {
+        "LOC": [
+          "The Eiffel Tower"
+        ],
+        "GPE": [
+          "Paris",
+          "France"
+        ],
+        "DATE": [
+          "between 1887 and 1889",
+          "1889"
+        ],
+        "EVENT": [
+          "World's"
+        ]
+      }
+    },
+    {
+      "index": 2,
+      "text": "It was designed by Gustave Eiffel's engineering company and initially faced criticism from artists and intellectuals who considered it an eyesore.",
+      "topic": "designer and initial reception",
+      "period": "unspecified",
+      "entities": {
+        "PERSON": [
+          "Gustave Eiffel's"
+        ]
+      }
+    },
+    {
+      "index": 3,
+      "text": "Today, the Eiffel Tower is one of the most visited monuments in the world, attracting over 7 million visitors annually.",
+      "topic": "present-day visitor numbers",
+      "period": "present day",
+      "entities": {
+        "DATE": [
+          "Today",
+          "annually"
+        ],
+        "LOC": [
+          "the Eiffel Tower"
+        ],
+        "CARDINAL": [
+          "one",
+          "over 7 million"
+        ]
+      }
+    },
+    {
+      "index": 4,
+      "text": "In 2015, special lighting systems were added to enhance its nighttime appearance and improve energy efficiency.",
+      "topic": "2015 lighting upgrade",
+      "period": "modern (2015)",
+      "entities": {
+        "DATE": [
+          "2015"
+        ]
+      }
+    }
+  ],
+  "subject": "The Eiffel Tower",
+  "facts": [
+    {
+      "category": "event",
+      "value": "1889 World's Fair",
+      "detail": "a major international exhibition",
+      "precision_warning": null
+    },
+    {
+      "category": "organisation",
+      "value": "Gustave Eiffel's engineering company",
+      "detail": "the company responsible for designing and building the tower",
+      "precision_warning": null
+    },
+    {
+      "category": "attribute",
+      "value": "entrance arch",
+      "detail": "the tower's original purpose",
+      "precision_warning": null
+    },
+    {
+      "category": "reception",
+      "value": "considered an eyesore",
+      "detail": "initial reaction to the tower's design",
+      "precision_warning": null
+    },
+    {
+      "category": "number",
+      "value": "7 million",
+      "detail": "annual visitor count",
+      "precision_warning": "'7 million' drops the qualifier 'over' — the document says over 7 million"
+    },
+    {
+      "category": "event",
+      "value": "2015",
+      "detail": "year special lighting systems were added",
+      "precision_warning": null
+    },
+    {
+      "category": "attribute",
+      "value": "energy efficiency",
+      "detail": "the lighting systems' intended purpose",
+      "precision_warning": null
+    },
+    {
+      "category": "reception",
+      "value": "enhance nighttime appearance",
+      "detail": "the lighting systems' intended effect",
+      "precision_warning": null
+    },
+    {
+      "category": "attribute",
+      "value": "improve",
+      "detail": "the lighting systems' intended outcome",
+      "precision_warning": null
+    },
+    {
+      "category": "date",
+      "value": "1887-1889",
+      "detail": "the tower's construction period",
+      "precision_warning": null
+    },
+    {
+      "category": "place",
+      "value": "Paris, France",
+      "detail": "the tower's location",
+      "precision_warning": null
+    },
+    {
+      "category": "date",
+      "value": "1889",
+      "detail": "the year the tower was completed",
+      "precision_warning": null
+    },
+    {
+      "category": "other",
+      "value": "Gustave Eiffel",
+      "detail": "the engineer responsible for designing the tower",
+      "precision_warning": null
+    }
+  ],
+  "ner_entities": {
+    "LOC": [
+      "The Eiffel Tower",
+      "the Eiffel Tower"
+    ],
+    "GPE": [
+      "Paris",
+      "France"
+    ],
+    "DATE": [
+      "between 1887 and 1889",
+      "1889",
+      "Today",
+      "annually",
+      "2015"
+    ],
+    "EVENT": [
+      "World's"
+    ],
+    "PERSON": [
+      "Gustave Eiffel's"
+    ],
+    "CARDINAL": [
+      "one",
+      "over 7 million"
+    ]
+  },
+  "summary": "The Eiffel Tower was constructed as the entrance arch to the 1889 World's Fair and was initially considered an eyesore by artists and intellectuals. It is now one of the most visited monuments in the world, attracting over 7 million visitors annually. Special lighting systems were added to the tower in 2015 to enhance its nighttime appearance and improve energy efficiency."
+}
