@@ -2,7 +2,7 @@
 ==================================================================================
 SETUP
 ==================================================================================
-  Model    : llama3.2:3b via ChatOllama (local, no API key)
+  Model    : qwen3:8b via ChatOllama (local, no API key)
   Splitter : spaCy en_core_web_sm sentence boundaries
   Document : 507 characters, 4 sentences
 
@@ -95,52 +95,27 @@ Extractor A — spaCy NER (grounded by construction)
 
 Extractor B — LLM with a Pydantic schema
 ----------------------------------------------------------------------------------
-  ! first attempt failed validation:
-  ! - subject: Field required
-  ! repaired on the second attempt
 
   subject: The Eiffel Tower
 
 
-  KEPT — supported by the source (13):
-    [ok       ] event         "1889 World's Fair"
-                 -> a major international exhibition
-    [ok       ] organisation  "Gustave Eiffel's engineering company"
-                 -> the company responsible for designing and building the tower
-    [ok       ] attribute     'entrance arch'
-                 -> the tower's original purpose
-    [ok       ] reception     'considered an eyesore'
-                 -> initial reaction to the tower's design
-    [IMPRECISE] number        '7 million'
-                 -> annual visitor count
-                 ! '7 million' drops the qualifier 'over' — the document says over 7 million
-    [ok       ] event         '2015'
-                 -> year special lighting systems were added
-    [ok       ] attribute     'energy efficiency'
-                 -> the lighting systems' intended purpose
-    [ok       ] reception     'enhance nighttime appearance'
-                 -> the lighting systems' intended effect
-    [ok       ] attribute     'improve'
-                 -> the lighting systems' intended outcome
-    [ok       ] date          '1887-1889'
-                 -> the tower's construction period
+  KEPT — supported by the source (8):
     [ok       ] place         'Paris, France'
-                 -> the tower's location
-    [ok       ] date          '1889'
-                 -> the year the tower was completed
-    [ok       ] other         'Gustave Eiffel'
-                 -> the engineer responsible for designing the tower
-
-  DISCARDED — not in the document (4):
-    [invented ] organisation  'none specified'   (no specific organisation credited for the lighting systems)
-    [invented ] date          '1909'   (the year the tower was officially opened)
-    [invented ] other         'Maurice Koechlin'   (the engineer responsible for designing the tower's main support columns)
-    [invented ] other         'Stephen Sauvestre'   (the engineer responsible for designing the tower's iconic curved shape)
-
-  Every discarded item is a fabrication produced under quantity pressure. None of
-  these values appears anywhere in the four sentences — they come from the model's
-  background knowledge of the Eiffel Tower, not from the document. Fluent,
-  specific, plausible and out of scope, which is exactly why the filter exists.
+                 -> Location of the Eiffel Tower
+    [ok       ] date          'between 1887 and 1889'
+                 -> Construction period of the Eiffel Tower
+    [ok       ] event         "the 1889 World's Fair"
+                 -> Purpose of constructing the Eiffel Tower
+    [ok       ] organisation  "Gustave Eiffel's engineering company"
+                 -> Designer of the Eiffel Tower
+    [ok       ] reception     'initially faced criticism from artists and intellectuals who considered it an eyesore'
+                 -> Initial reaction to the Eiffel Tower
+    [ok       ] number        'over 7 million visitors annually'
+                 -> Annual visitor count of the Eiffel Tower
+    [ok       ] event         'In 2015, special lighting systems were added'
+                 -> Modification to enhance nighttime appearance
+    [ok       ] purpose       'enhance its nighttime appearance and improve energy efficiency'
+                 -> Reason for adding special lighting systems
 
 Checked against what a careful reader would extract
 ----------------------------------------------------------------------------------
@@ -151,7 +126,7 @@ Checked against what a careful reader would extract
   construction_end       1889                                           yes
   purpose                entrance arch to the 1889 World's Fair         yes
   designer               Gustave Eiffel's engineering company           yes
-  initial_reception      criticism from artists and intellectuals who   no
+  initial_reception      criticism from artists and intellectuals who   yes
   visitors               over 7 million annually                        yes
   lighting_year          2015                                           yes
   lighting_purpose       enhance nighttime appearance and improve ene   yes
@@ -162,21 +137,21 @@ TASK 3 — SUMMARY
 
 Generated summary
 ----------------------------------------------------------------------------------
-  The Eiffel Tower was constructed as the entrance arch to the 1889 World's Fair and was initially considered an eyesore by artists and intellectuals. It is now one of the most visited monuments in the world, attracting over 7 million visitors annually. Special lighting systems were added to the tower in 2015 to enhance its nighttime appearance and improve energy efficiency.
+  The Eiffel Tower, located in Paris, France, was constructed between 1887 and 1889 as the entrance arch to the 1889 World's Fair. It was designed by Gustave Eiffel's engineering company and initially faced criticism from artists and intellectuals who considered it an eyesore. Today, the Eiffel Tower is one of the most visited monuments in the world, attracting over 7 million visitors annually. In 2015, special lighting systems were added to enhance its nighttime appearance and improve energy efficiency.
 
 Checked against the source
 ----------------------------------------------------------------------------------
-  numbers in the summary : ['1889', '2015', '7']
+  numbers in the summary : ['1887', '1889', '2015', '7']
   numbers in the source  : ['1887', '1889', '2015', '7']
   invented numbers       : none
   kept the 'over' qualifier on 7 million : True
-  credits the company (correct)          : False
+  credits the company (correct)          : True
   credits Gustave Eiffel personally only : False
 
 ==================================================================================
 EXPORT
 ==================================================================================
-  output/knowledge.json   4 chunks, 13 verified facts, 1 summary
+  output/knowledge.json   4 chunks, 8 verified facts, 1 summary
 
 ==================================================================================
 Done.

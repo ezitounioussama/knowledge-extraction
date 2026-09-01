@@ -24,7 +24,7 @@ from langchain_core.prompts import PromptTemplate
 from langchain_ollama import ChatOllama
 from pydantic import BaseModel, Field, field_validator
 
-MODEL = "llama3.2:3b"
+MODEL = "qwen3:8b"
 
 # Labels worth keeping from spaCy. CARDINAL is included for the visitor figure;
 # ORDINAL and similar are dropped as noise.
@@ -100,7 +100,7 @@ class ExtractedFacts(BaseModel):
 parser = JsonOutputParser(pydantic_object=ExtractedFacts)
 
 # temperature=0: extraction should give the same answer every run.
-model = ChatOllama(model=MODEL, temperature=0.0, num_predict=700)
+model = ChatOllama(model=MODEL, reasoning=False, temperature=0.0, num_predict=700)
 
 # Two rules earn their place here. "Quote the document's own words" is what keeps
 # the values verifiable. The designer instruction is there because the sentence
