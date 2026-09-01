@@ -69,81 +69,51 @@
   "subject": "The Eiffel Tower",
   "facts": [
     {
+      "category": "place",
+      "value": "Paris, France",
+      "detail": "Location of the Eiffel Tower",
+      "precision_warning": null
+    },
+    {
+      "category": "date",
+      "value": "between 1887 and 1889",
+      "detail": "Construction period of the Eiffel Tower",
+      "precision_warning": null
+    },
+    {
       "category": "event",
-      "value": "1889 World's Fair",
-      "detail": "a major international exhibition",
+      "value": "the 1889 World's Fair",
+      "detail": "Purpose of constructing the Eiffel Tower",
       "precision_warning": null
     },
     {
       "category": "organisation",
       "value": "Gustave Eiffel's engineering company",
-      "detail": "the company responsible for designing and building the tower",
-      "precision_warning": null
-    },
-    {
-      "category": "attribute",
-      "value": "entrance arch",
-      "detail": "the tower's original purpose",
+      "detail": "Designer of the Eiffel Tower",
       "precision_warning": null
     },
     {
       "category": "reception",
-      "value": "considered an eyesore",
-      "detail": "initial reaction to the tower's design",
+      "value": "initially faced criticism from artists and intellectuals who considered it an eyesore",
+      "detail": "Initial reaction to the Eiffel Tower",
       "precision_warning": null
     },
     {
       "category": "number",
-      "value": "7 million",
-      "detail": "annual visitor count",
-      "precision_warning": "'7 million' drops the qualifier 'over' — the document says over 7 million"
+      "value": "over 7 million visitors annually",
+      "detail": "Annual visitor count of the Eiffel Tower",
+      "precision_warning": null
     },
     {
       "category": "event",
-      "value": "2015",
-      "detail": "year special lighting systems were added",
+      "value": "In 2015, special lighting systems were added",
+      "detail": "Modification to enhance nighttime appearance",
       "precision_warning": null
     },
     {
-      "category": "attribute",
-      "value": "energy efficiency",
-      "detail": "the lighting systems' intended purpose",
-      "precision_warning": null
-    },
-    {
-      "category": "reception",
-      "value": "enhance nighttime appearance",
-      "detail": "the lighting systems' intended effect",
-      "precision_warning": null
-    },
-    {
-      "category": "attribute",
-      "value": "improve",
-      "detail": "the lighting systems' intended outcome",
-      "precision_warning": null
-    },
-    {
-      "category": "date",
-      "value": "1887-1889",
-      "detail": "the tower's construction period",
-      "precision_warning": null
-    },
-    {
-      "category": "place",
-      "value": "Paris, France",
-      "detail": "the tower's location",
-      "precision_warning": null
-    },
-    {
-      "category": "date",
-      "value": "1889",
-      "detail": "the year the tower was completed",
-      "precision_warning": null
-    },
-    {
-      "category": "other",
-      "value": "Gustave Eiffel",
-      "detail": "the engineer responsible for designing the tower",
+      "category": "purpose",
+      "value": "enhance its nighttime appearance and improve energy efficiency",
+      "detail": "Reason for adding special lighting systems",
       "precision_warning": null
     }
   ],
@@ -174,5 +144,5 @@
       "over 7 million"
     ]
   },
-  "summary": "The Eiffel Tower was constructed as the entrance arch to the 1889 World's Fair and was initially considered an eyesore by artists and intellectuals. It is now one of the most visited monuments in the world, attracting over 7 million visitors annually. Special lighting systems were added to the tower in 2015 to enhance its nighttime appearance and improve energy efficiency."
+  "summary": "The Eiffel Tower, located in Paris, France, was constructed between 1887 and 1889 as the entrance arch to the 1889 World's Fair. It was designed by Gustave Eiffel's engineering company and initially faced criticism from artists and intellectuals who considered it an eyesore. Today, the Eiffel Tower is one of the most visited monuments in the world, attracting over 7 million visitors annually. In 2015, special lighting systems were added to enhance its nighttime appearance and improve energy efficiency."
 }
